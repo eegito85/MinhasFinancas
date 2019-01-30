@@ -1,0 +1,68 @@
+﻿@model MinhasFinancas.Mvc.Models.Transacao.TransacaoModel
+
+
+@{
+    ViewData["Title"] = "EditarTransacao";
+}
+
+<h3>Edite as informações da sua transação</h3>
+<br />
+<form asp-controller="Transacao" asp-action="EditarTransacao">
+    <div class="form-group">
+        <label>Data:</label>
+        <input type="date" asp-for="Data" class="form-control" />
+        <span asp-validation-for="Data" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Tipo:</label>
+        <div class="row">
+            <div class="custom-radio">
+                <label><input type="radio" asp-for="Tipo" class="form-control" value="R" />Receita</label>
+            </div>
+            <div style="width:5px"></div>
+            <div class="custom-radio">
+                <label><input type="radio" asp-for="Tipo" class="form-control" value="D" />Despesa</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Valor:</label>
+        <input type="text" asp-for="Valor" class="form-control" />
+        <span asp-validation-for="Valor" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Descrição:</label>
+        <textarea rows="5" asp-for="Descricao" class="form-control" ></textarea>
+    </div>
+    <div class="form-group">
+        <label>Conta:</label>
+        <select asp-for="NomeConta" class="form-control">
+            @{
+                foreach (var item in (List<string>)ViewBag.ListaContas)
+                {
+                    <option value="@item">@item</option>
+                }
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Conta:</label>
+        <select asp-for="DescricaoPlanoConta" class="form-control">
+            @{
+                foreach (var item in (List<string>)ViewBag.ListaPlanoContas)
+                {
+                    <option value="@item">@item</option>
+                }
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-block btn-success">Editar</button>
+</form>
+<br />
+<button type="button" class="btn btn-block btn-primary" onclick="Voltar()">Voltar</button>
+<script>
+    function Voltar()
+    {
+        window.location.href = "../";
+    }
+</script>

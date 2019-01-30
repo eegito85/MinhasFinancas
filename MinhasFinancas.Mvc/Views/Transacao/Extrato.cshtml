@@ -1,0 +1,96 @@
+﻿@model MinhasFinancas.Mvc.Models.Transacao.TransacaoModel
+
+<h3>Meu extrato</h3>
+<br />
+<div class="row">
+    <div class="col-8"><h4>Pesquisar Dados</h4></div>
+    <div class="col-4">
+        <button type="button" class="btn btn-block btn-primary" onclick="Voltar()">Voltar</button>
+    </div>
+</div>
+<br />
+<div class="container">
+    <form asp-controller="Transacao" asp-action="Extrato">
+        <div class="form-group">
+            <label>Data da transação:</label>
+            <input type="date" asp-for="Data" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Tipo de transação:</label>
+            <div class="radio"><label><input type="radio" asp-for="Tipo" value="R" checked /> Receita</label></div>
+            <div class="radio"><label><input type="radio" asp-for="Tipo" value="D" checked /> Despesa</label></div>
+        </div>
+        <div class="form-group">
+            <label>Conta:</label>
+            <select asp-for="NomeConta" class="form-control">
+                @{
+                    foreach (var item in (List<string>)ViewBag.ListaContas)
+                    {
+                        <option value="@item">@item</option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Conta:</label>
+            <select asp-for="DescricaoPlanoConta" class="form-control">
+                @{
+                    foreach (var item in (List<string>)ViewBag.ListaPlanoContas)
+                    {
+                        <option value="@item">@item</option>
+                    }
+                }
+            </select>
+        </div>
+        <button type="submit" class="btn btn-block btn-success">Pesquisar</button>
+    </form>
+</div>
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Data</th>
+            <th>Tipo</th>
+            <th>Valor</th>
+            <th>Descrição</th>
+            <th>Conta</th>
+            <th>Plano de Contas</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var item in (List<MinhasFinancas.Mvc.Models.Transacao.TransacaoModel>)ViewBag.ListaTransacao)
+            {
+                <tr style="text-align:center">
+                    <td><button type="button" class="btn btn-success" onclick="Editar(@item.Id.ToString())">Editar</button></td>
+                    <td>@item.Id</td>
+                    <td>@item.Data</td>
+                    <td>@item.Tipo.ToString()</td>
+                    <td>@item.Valor</td>
+                    <td>@item.Descricao</td>
+                    <td>@item.NomeConta</td>
+                    <td>@item.DescricaoPlanoConta</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<br />
+<div class="row">
+    <div>Saldo:</div>
+    <div> R$ @ViewBag.Saldo</div>
+</div>
+
+<script>
+    function Editar(id_conta) {
+        window.location.href = "../Transacao/EditarTransacao/" + id_conta;
+    }
+    function Voltar()
+    {
+        window.location.href = "../Home/Menu";
+    }
+</script>
+
+

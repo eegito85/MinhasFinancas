@@ -1,0 +1,9 @@
+C:\Users\emmanuel.marinho\source\repos\MinhasFinancas\MinhasFinancas.Domain\bin\Debug\netcoreapp2.1\MinhasFinancas.Domain.deps.json
+C:\Users\emmanuel.marinho\source\repos\MinhasFinancas\MinhasFinancas.Domain\bin\Debug\netcoreapp2.1\MinhasFinancas.Domain.dll
+C:\Users\emmanuel.marinho\source\repos\MinhasFinancas\MinhasFinancas.Domain\bin\Debug\netcoreapp2.1\MinhasFinancas.Domain.pdb
+C:\Users\emmanuel.marinho\source\repos\MinhasFinancas\MinhasFinancas.Domain\obj\Debug\netcoreapp2.1\MinhasFinancas.Domain.csprojAssemblyReference.cache
+C:\Users\emmanuel.marinho\source\repos\MinhasFinancas\MinhasFinancas.Domain\obj\Debug\netcoreapp2.1\MinhasFinancas.Domain.csproj.CoreCompileInputs.cache
+C:\Users\emmanuel.marinho\source\repos\MinhasFinancas\MinhasFinancas.Domain\obj\Debug\netcoreapp2.1\MinhasFinancas.Domain.AssemblyInfoInputs.cache
+C:\Users\emmanuel.marinho\source\repos\MinhasFinancas\MinhasFinancas.Domain\obj\Debug\netcoreapp2.1\MinhasFinancas.Domain.AssemblyInfo.cs
+C:\Users\emmanuel.marinho\source\repos\MinhasFinancas\MinhasFinancas.Domain\obj\Debug\netcoreapp2.1\MinhasFinancas.Domain.dll
+C:\Users\emmanuel.marinho\source\repos\MinhasFinancas\MinhasFinancas.Domain\obj\Debug\netcoreapp2.1\MinhasFinancas.Domain.pdb

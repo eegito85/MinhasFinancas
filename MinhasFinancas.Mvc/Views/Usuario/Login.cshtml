@@ -1,0 +1,40 @@
+﻿@model MinhasFinancas.Domain.Entidades.Usuario
+
+@{ 
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+
+@{
+    try
+    {
+        if (@TempData["MensagemLoginInvalido"].ToString() != null)
+        {
+            <div class="alert alert-danger">
+                <strong>@TempData["MensagemLoginInvalido"] </strong>
+            </div>
+        }
+    }
+    catch { }
+
+}
+
+
+<form asp-controller="Usuario" asp-action="Login">
+    <div class="form-group" style="color:white;width:50%">
+        <label for="email">E-mail:</label>
+        <input type="email" class="form-control" asp-for="Email" />
+    </div>
+    <div class="form-group" style="color:white;width:50%">
+        <label for="pwd">Senha:</label>
+        <input type="password" class="form-control" asp-for="Senha" />
+    </div>
+    <div class="checkbox"  style="color:white">
+        <label><input type="checkbox" /> Lembrar-me</label>
+    </div>
+    <button type="submit" class="btn btn-default">Entrar</button>
+</form>
+
+
+
+

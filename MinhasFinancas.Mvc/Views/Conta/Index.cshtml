@@ -1,0 +1,50 @@
+﻿@model IEnumerable<MinhasFinancas.Domain.Entidades.Conta>
+
+<h3>Minhas Contas</h3>
+
+@using (Html.BeginForm())
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr style="text-align:center">
+                <th>#</th>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Saldo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model)
+                {
+                    <tr style="text-align:center">
+                        <td><button type="button" class="btn btn-danger" onclick="Excluir(@item.Id.ToString())">Excluir</button></td>
+                        <td>@item.Id</td>
+                        <td>@item.Nome</td>
+                        <td>@item.Saldo</td>
+                    </tr>
+                }
+            }
+        </tbody>
+
+    </table>
+
+    <button type="button" class="btn btn-block btn-primary" onclick="CriarConta()">Criar Conta</button>
+}
+<br />
+<button type="button" class="btn btn-block btn-primary" onclick="VoltarParaMenu()">Voltar para o menu principal</button>
+<script>
+    function CriarConta() {
+        window.location.href = "../Conta/CriarConta";
+    }
+
+    function Excluir(id_conta) {
+        window.location.href = "../Conta/ExcluirConta/" + id_conta;
+    }
+    function VoltarParaMenu() {
+        window.location.href = "../Home/Menu";
+    }
+</script>
+
+
+

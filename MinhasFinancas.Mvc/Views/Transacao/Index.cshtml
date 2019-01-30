@@ -1,0 +1,61 @@
+﻿@model IEnumerable<MinhasFinancas.Mvc.Models.Transacao.TransacaoModel>
+
+<h3>Minhas transações realizadas</h3>
+<br />
+
+@using (Html.BeginForm())
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr style="text-align:center">
+                <th>#</th>
+                <th>#</th>
+                <th>ID</th>
+                <th>Data</th>
+                <th>Tipo</th>
+                <th>Valor</th>
+                <th>Descrição</th>
+                <th>Conta</th>
+                <th>Plano de Contas</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model)
+                {
+            <tr style="text-align:center">
+                <td><button type="button" class="btn btn-success" onclick="Editar(@item.Id.ToString())">Editar</button></td>
+                <td><button type="button" class="btn btn-danger" onclick="Excluir(@item.Id.ToString())">Excluir</button></td>
+                <td>@item.Id</td>
+                <td>@item.Data</td>
+                <td>@item.Tipo.ToString()</td>
+                <td>@item.Valor</td>
+                <td>@item.Descricao</td>
+                <td>@item.NomeConta</td>
+                <td>@item.DescricaoPlanoConta</td>
+            </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <br />
+    <button type="button" class="btn btn-block btn-success" onclick="CriarTransacao()">Registrar nova transação</button>
+}
+<br />
+<button type="button" class="btn btn-block btn-primary" onclick="VoltarParaMenu()">Voltar para menu principal</button>
+<script>
+    function CriarTransacao() {
+        window.location.href = "../Transacao/CriarTransacao";
+    }
+
+    function Excluir(id_conta) {
+        window.location.href = "../Transacao/ExcluirTransacao/" + id_conta;
+    }
+    function Editar(id_conta) {
+        window.location.href = "../Transacao/EditarTransacao/" + id_conta;
+    }
+    function VoltarParaMenu() {
+        window.location.href = "../Home/Menu";
+    }
+</script>
+

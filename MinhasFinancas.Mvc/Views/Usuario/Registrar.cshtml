@@ -1,0 +1,39 @@
+﻿@model MinhasFinancas.Domain.Entidades.Usuario
+
+<h3>Registrar nova conta</h3>
+
+<form class="form-horizontal" asp-controller="Usuario" asp-action="Registrar"  method="post" novalidate>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="nome">Nome:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" asp-for="Nome" placeholder="Digite seu nome completo">
+            <span asp-validation-for="Nome" class="text-danger">O campo Nome é obrigatório</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">E-mail:</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" asp-for="Email" placeholder="Digite seu email">
+            <span asp-validation-for="Email" class="text-danger">O campo E-mail é obrigatório</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="dataNasc">Data de nascimento:</label>
+        <div class="col-sm-10">
+            <input type="date" class="form-control" asp-for="Data_Nascimento" placeholder="Digite sua data de nascimento">
+            <span asp-validation-for="Data_Nascimento" class="text-danger">O campo Data de nascimento é obrigatório</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Criar senha:</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" asp-for="Senha" placeholder="Crie uma senha">
+            <span asp-validation-for="Senha" class="text-danger">O campo Senha é obrigatório</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success">Registrar</button>
+        </div>
+    </div>
+</form>

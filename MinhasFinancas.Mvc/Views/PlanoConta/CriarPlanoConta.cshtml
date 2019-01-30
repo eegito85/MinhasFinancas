@@ -1,0 +1,37 @@
+﻿@model MinhasFinancas.Domain.Entidades.Plano_Conta
+
+
+@{
+    ViewData["Title"] = "CriarPlanoConta";
+}
+
+<h3>Criar novo Plano de Conta</h3>
+<br />
+<form asp-controller="PlanoConta" asp-action="CriarPlanoConta">
+    <div class="form-group">
+        <label>Descrição:</label>
+        <input type="text" asp-for="Descricao" class="form-control" />
+        <span asp-validation-for="Descricao" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Tipo:</label>
+        <div class="row">
+            <div class="custom-radio">
+                <label><input type="radio" asp-for="Tipo" class="form-control" value="R" />Receita</label>
+            </div>
+            <div class="custom-radio">
+                <label><input type="radio" asp-for="Tipo" class="form-control" value="D" />Despesa</label>
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-block btn-success">Registrar</button>
+</form>
+<br />
+<button type="button" class="btn btn-block btn-primary" onclick="Voltar()">Voltar</button>
+<script>
+    function Voltar()
+    {
+        window.location.href = "../PlanoConta";
+    }
+</script>
